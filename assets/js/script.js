@@ -35,7 +35,7 @@ document.getElementById('startBtn').addEventListener('click', () => {
 
 
 document.getElementById("telegram-invite-btn").addEventListener("click", function() {
-    const appUrl = "https://sizin-app-linkiniz.com"; // Burada öz app-ınızın linkini yazın
+    const appUrl = "https://lottoapp-silk.vercel.app/"; // Burada öz app-ınızın linkini yazın
     const text = "Bu app-ə qatıl!"; // İstəyə bağlı mesajınız
     const telegramShareUrl = `https://t.me/share/url?url=${encodeURIComponent(appUrl)}&text=${encodeURIComponent(text)}`;
     window.open(telegramShareUrl, "_blank");
