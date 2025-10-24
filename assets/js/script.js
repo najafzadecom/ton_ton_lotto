@@ -32,7 +32,14 @@ document.getElementById('startBtn').addEventListener('click', () => {
     tg.MainButton.show();
 });
 
-
+document.getElementById("inviteBtn").addEventListener("click", () => {
+    const user = tg.initDataUnsafe.user;
+    const refLink = `https://t.me/ton_ton_lotto_bot/app?startapp=ref_${user.id}`;
+  
+    tg.openTelegramLink(
+      `https://t.me/share/url?url=${encodeURIComponent(refLink)}&text=🎯 Play Ton Ton Lotto with me and earn rewards!`
+    );
+  });
 
 document.getElementById("telegram-invite-btn").addEventListener("click", function() {
     const appUrl = "https://lottoapp-silk.vercel.app/"; // Burada öz app-ınızın linkini yazın
