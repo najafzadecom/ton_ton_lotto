@@ -6,7 +6,7 @@ const buyBtn = document.getElementById('buyStar');
 buyBtn.addEventListener('click', () => {
     tg.sendData(JSON.stringify({
         type: 'buy_star',
-        amount: 5  // məsələn, 5 Star
+        amount: 5
     }));
 });
 
