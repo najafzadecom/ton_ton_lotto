@@ -32,13 +32,11 @@ document.getElementById('startBtn').addEventListener('click', () => {
     tg.MainButton.show();
 });
 
-// İstifadəçi məlumatını ayrıca yazdır
-const user = tg.initDataUnsafe.user;
-const userDiv = document.createElement('div');
-userDiv.style.marginTop = "20px";
-userDiv.style.background = "#eee";
-userDiv.style.color = "#000";
-userDiv.style.padding = "10px";
-userDiv.style.borderRadius = "10px";
-userDiv.textContent = "User info:\n" + JSON.stringify(user, null, 2);
-document.body.appendChild(userDiv);
+
+
+document.getElementById("telegram-invite-btn").addEventListener("click", function() {
+    const appUrl = "https://sizin-app-linkiniz.com"; // Burada öz app-ınızın linkini yazın
+    const text = "Bu app-ə qatıl!"; // İstəyə bağlı mesajınız
+    const telegramShareUrl = `https://t.me/share/url?url=${encodeURIComponent(appUrl)}&text=${encodeURIComponent(text)}`;
+    window.open(telegramShareUrl, "_blank");
+});
