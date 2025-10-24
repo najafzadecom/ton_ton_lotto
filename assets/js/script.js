@@ -40,10 +40,3 @@ document.getElementById("inviteBtn").addEventListener("click", () => {
       `https://t.me/share/url?url=${encodeURIComponent(refLink)}&text=🎯 Play Ton Ton Lotto with me and earn rewards!`
     );
   });
-
-document.getElementById("telegram-invite-btn").addEventListener("click", function() {
-    const appUrl = "https://lottoapp-silk.vercel.app/"; // Burada öz app-ınızın linkini yazın
-    const text = "Bu app-ə qatıl!"; // İstəyə bağlı mesajınız
-    const telegramShareUrl = `https://t.me/share/url?url=${encodeURIComponent(appUrl)}&text=${encodeURIComponent(text)}`;
-    window.open(telegramShareUrl, "_blank");
-});
