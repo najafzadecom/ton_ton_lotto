@@ -25,6 +25,8 @@ async function buyStars(amount) {
     });
     const data = await res.json();
 
+    tg.showAlert(data);
+
     // backend-dən gələn invoice linki açırıq
     tg.openInvoice(data.link, function (status) {
         if (status === 'paid') {
