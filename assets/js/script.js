@@ -18,13 +18,27 @@ container.textContent += "initDataUnsafe:\n" + JSON.stringify(tg.initDataUnsafe,
 container.textContent += "initData:\n" + tg.initData + "\n\n";
 
 // Star alma düyməsi
-const buyBtn = document.getElementById('buyStar');
-buyBtn.addEventListener('click', () => {
-    tg.sendData(JSON.stringify({
-        type: 'buy_star',
-        amount: 5
-    }));
-});
+async function buyStars(amount) {
+    const res = await fetch('/api/create-invoice', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount })
+    });
+    const data = await res.json();
+
+    // backend-dən gələn invoice linki açırıq
+    tg.openInvoice(data.link, function (status) {
+        if (status === 'paid') {
+            alert('Ödəniş uğurla alındı!');
+        } else if (status === 'cancelled') {
+            alert('Ödəniş ləğv edildi.');
+        } else {
+            alert('Xəta: ' + status);
+        }
+    });
+}
+
+document.getElementById('buyStar').addEventListener('click', () => buyStars(5));
 
 // Start düyməsi
 document.getElementById('startBtn').addEventListener('click', () => {
