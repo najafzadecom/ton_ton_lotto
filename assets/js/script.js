@@ -1,7 +1,6 @@
 const tg = window.Telegram.WebApp;
 tg.expand();
 
-// Telegram-dan gələn bütün məlumatı ekrana yazdır
 const container = document.createElement('div');
 container.style.whiteSpace = "pre-wrap";
 container.style.background = "#fff";
@@ -19,7 +18,7 @@ container.textContent += "initData:\n" + tg.initData + "\n\n";
 
 // Star alma düyməsi
 async function buyStars(amount) {
-    const res = await fetch('/api/create-invoice', {
+    const res = await fetch('https://nonconciliating-tyisha-superstrictly.ngrok-free.dev/api/telegram/invoice', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount })
