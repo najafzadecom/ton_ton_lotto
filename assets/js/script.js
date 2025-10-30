@@ -18,6 +18,7 @@ container.textContent += "initData:\n" + tg.initData + "\n\n";
 
 // Star alma düyməsi
 async function buyStars(amount) {
+    alert('Basildi');
     const res = await fetch('https://nonconciliating-tyisha-superstrictly.ngrok-free.dev/api/telegram/invoice', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
